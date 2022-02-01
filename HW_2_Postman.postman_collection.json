@@ -12,10 +12,19 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"//Отправить запрос.\r",
+							"//Статус код 200\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
+							"//Проверить, что в body приходит правильный string.\r",
+							"var HHH = pm.response.text();\r",
+							"console.log(HHH)\r",
+							"\r",
+							"pm.test('Check_the_right_answ', function(){\r",
+							"    pm.expect(HHH).to.include('This is the first responce from server!')\r",
+							"})\r",
 							""
 						],
 						"type": "text/javascript"
@@ -466,6 +475,13 @@
 							"pm.test('Check_response_ex.21', function (){\r",
 							"    pm.expect(1* 'ReSSS.u_salary_5_years').to.eql(4.2* 'Reqqq.salary');\r",
 							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
